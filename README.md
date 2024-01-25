@@ -1,4 +1,4 @@
 
-# Personal porfolio webiste.
+# Personal portfolio webiste.
 
 Live Link - https://nawang.xyz
