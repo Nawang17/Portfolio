@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(40 44 52);
+  font-family: "Open Sans", sans-serif;
+}
+footer {
+  margin: 0 auto;
+  max-width: 800px;
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px 50px 20px;
+
+  color: white;
+}
+
+footer div {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+/* header title */
+footer > h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgb(211, 207, 207);
+}
+/* footer icons */
+footer div i {
+  cursor: pointer;
+  color: rgb(211, 207, 207);
+}
+main {
+  padding: 20px;
+  margin: 0 auto;
+  margin-top: 20px;
+
+  max-width: 800px;
+}
+.intro1 {
+  color: white;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.intro2 {
+  color: rgb(188, 184, 184);
+  font-size: 1.1rem;
+  font-weight: 400;
+  padding-top: 30px;
+  line-height: 2;
+}
+.skills {
+  color: rgb(188, 184, 184);
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 2;
+  margin-top: 1.5rem;
+}
+.skills > span {
+  color: rgb(198, 195, 195);
+  font-weight: bold;
+}
+.project-section {
+  margin-top: 3rem;
+}
+.project-section > h3 {
+  color: rgb(198, 195, 195);
+
+  font-size: 1.1rem;
+
+  font-weight: bold;
+}
+.projects {
+  color: rgb(188, 184, 184);
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding-top: 20px;
+}
+.project {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 18px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  border: 1px solid rgb(64 64 64);
+  flex: 1 1 1;
+  width: 100%;
+}
+.title {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+
+  line-height: 2;
+}
+.description {
+  padding-top: 10px;
+}
+.stack {
+  padding-top: 15px;
+}
+.projectheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.projectlinks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  color: rgb(198, 195, 195);
+}
+.projectlinks > a {
+  color: rgb(198, 195, 195);
+}
