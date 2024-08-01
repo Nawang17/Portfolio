@@ -1,126 +1,179 @@
+/* Reset and Box Sizing */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* General Body Styling */
 body {
-  background-color: rgb(40 44 52);
   font-family: "Open Sans", sans-serif;
-}
-footer {
-  margin: 0 auto;
-  max-width: 800px;
-  /* background-color: red; */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 25px 50px 20px;
-
-  color: white;
+  background-color: #f9f9f9; /* Light background color for the body */
+  color: #333; /* Darker text color for better contrast */
 }
 
-footer div {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-}
-/* header title */
-footer > h3 {
-  font-size: 1rem;
-  font-weight: 600;
-  color: rgb(211, 207, 207);
-}
-/* footer icons */
-footer div i {
-  cursor: pointer;
-  color: rgb(211, 207, 207);
-}
+/* Main Section Styling */
 main {
   padding: 20px;
   margin: 0 auto;
   margin-top: 20px;
-
   max-width: 800px;
 }
+
+/* Intro Section */
 .intro1 {
-  color: white;
+  color: #222; /* Darker text color */
   font-size: 2rem;
   font-weight: 700;
 }
+
 .intro2 {
-  color: rgb(188, 184, 184);
+  color: #222; /* Darker text color */
   font-size: 1.1rem;
   font-weight: 400;
   padding-top: 30px;
-  line-height: 2;
+  line-height: 1.6; /* Increased line height for readability */
 }
+
+/* Skills Section */
 .skills {
-  color: rgb(188, 184, 184);
+  color: #222; /* Darker text color */
   font-size: 1rem;
   font-weight: 400;
-  line-height: 2;
+  line-height: 1.6; /* Increased line height for readability */
   margin-top: 1.5rem;
 }
+
 .skills > span {
-  color: rgb(198, 195, 195);
+  color: #222; /* Darker text color */
   font-weight: bold;
 }
+
+/* Project Section */
 .project-section {
   margin-top: 3rem;
 }
+
 .project-section > h3 {
-  color: rgb(198, 195, 195);
-
+  color: #222; /* Darker text color */
   font-size: 1rem;
-
   font-weight: bold;
 }
+
+/* Project Container */
 .projects {
-  color: rgb(188, 184, 184);
-  font-size: 1.1rem;
-  font-weight: 400;
-  line-height: 2;
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
   padding-top: 20px;
 }
+
+/* Project Card */
 .project {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  background-color: #fff; /* White background for project cards */
   padding: 18px;
-  border-radius: 4px;
+  border-radius: 8px;
   font-size: 0.9rem;
-  border: 1px solid rgb(64 64 64);
+  border: 1px solid #aab8c2;
   flex: 1 1 1;
   width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.3s; /* Smooth transition for hover effect */
 }
-.title {
-  color: white;
-  font-size: 1rem;
-  font-weight: bold;
 
-  line-height: 2;
+.project:hover {
+  transform: translateY(-5px); /* Lift card on hover */
 }
-.description {
-  padding-top: 10px;
-}
-.stack {
-  padding-top: 15px;
-}
+
+/* Project Header */
 .projectheader {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: 10px; /* Add padding for spacing */
+  border-bottom: 1px solid #ddd; /* Add border to separate elements */
 }
+
+/* Project Links */
 .projectlinks {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 10px;
-  color: rgb(198, 195, 195);
+  color: #007bff; /* Link color */
 }
+
 .projectlinks > a {
-  color: rgb(198, 195, 195);
+  color: #007bff; /* Link color */
+  transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.projectlinks > a:hover {
+  color: #0056b3; /* Darker color on hover */
+}
+
+/* Project Title */
+.title {
+  color: #222; /* Darker text color */
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.6; /* Increased line height for readability */
+}
+
+/* Project Description and Stack */
+.description {
+  padding-top: 10px;
+}
+
+.stack {
+  padding-top: 15px;
+}
+
+/* Footer Section */
+footer {
+  background-color: #f1f1f1; /* Light background color for the footer */
+  border-top: 1px solid #ddd; /* Light border at the top */
+  margin: 0 auto;
+  max-width: 800px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px 50px 20px;
+  color: #333; /* Darker text color */
+}
+
+/* Footer Icon Styling */
+footer div {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+footer div i {
+  font-size: 30px; /* Increased icon size */
+  cursor: pointer;
+  color: #333; /* Darker icon color */
+  transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+footer div i:hover {
+  color: #007bff; /* Change color on hover */
+}
+
+/* Footer Header */
+footer > h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #222; /* Darker text color */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .projects {
+    flex-direction: column; /* Stack projects vertically on smaller screens */
+  }
+
+  .project {
+    width: 100%; /* Full width on small screens */
+  }
 }
