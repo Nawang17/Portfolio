@@ -123,6 +123,7 @@ main {
 /* Project Description and Stack */
 .description {
   padding-top: 10px;
+  font-weight: 500;
 }
 
 .stack {
