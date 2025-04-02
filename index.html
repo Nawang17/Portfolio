@@ -7,7 +7,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <meta property="og:description" content="Nawang portfolio website" />
@@ -17,9 +16,10 @@
     />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -28,44 +28,42 @@
   </head>
   <body>
     <main>
-      <p class="intro1">Hi, I&rsquo;m Nawang 👋</p>
+      <p class="intro1">Hi, I’m Nawang 👋</p>
       <p class="intro2">
         I am a college student interested in
-        <span style="color: rgb(16 185 129); font-weight: bold"
-          >Full stack web development</span
+        <span style="color: var(--accent); font-weight: bold">
+          Full stack web development</span
         >. Feel free to reach out if you have any cool projects in mind.
       </p>
       <p class="skills">
-        <span>Technologies</span> : HTML • CSS • JavaScript • React • Node.js •
-        Express.js • REST Apis • MYSQL
+        <span>Technologies</span>: HTML • CSS • JavaScript • React • Node.js •
+        Express.js • REST APIs • MySQL
       </p>
 
       <section class="project-section">
         <h3>Projects</h3>
         <div class="projects">
-          <!-- project 1 -->
           <div class="project">
             <div class="projectheader">
               <p class="title">MOMOS</p>
               <div class="projectlinks">
-                <a href="https://momosz.com/" target="_blank"> Live Demo </a>
+                <a href="https://momosz.com/" target="_blank">Live Demo</a>
                 <a
                   href="https://github.com/Nawang17/momos-client"
                   target="_blank"
+                  >Code</a
                 >
-                  Code
-                </a>
               </div>
             </div>
             <p class="description">
-              A full stack social network web app. Users can create an account,
-              post, comment, like, and chat in realtime with other users.
+              A full stack social network web app with account creation, posts,
+              comments, likes, and real-time chat.
             </p>
             <p class="stack">
-              React • Node.js • Express.js • MYSQL • Socket.io • Mantine
+              React • Node.js • Express.js • MySQL • Socket.io • Mantine
             </p>
           </div>
-          <!-- project 2 -->
+
           <div class="project">
             <div class="projectheader">
               <p class="title">Himalayan Recipes</p>
@@ -76,59 +74,54 @@
                 <a
                   href="https://github.com/Nawang17/HimalayanRecipes"
                   target="_blank"
-                  >Github</a
+                  >Code</a
                 >
               </div>
             </div>
             <p class="description">
-              A web app for sharing and discovering traditional Himalayan
-              recipes. Users can explore dishes, add their own recipes, and
-              contribute cultural insights.
+              A web app to explore, share, and contribute traditional Himalayan
+              recipes and cultural insights.
             </p>
             <p class="stack">React • Mantine • Firebase • Netlify</p>
           </div>
-          <!-- project 3 -->
+
           <div class="project">
             <div class="projectheader">
               <p class="title">Covid-19 Info</p>
               <div class="projectlinks">
-                <a href="https://covid-19-hack4pan.vercel.app/" target="_blank">
-                  Live Demo
-                </a>
+                <a href="https://covid-19-hack4pan.vercel.app/" target="_blank"
+                  >Live Demo</a
+                >
                 <a
                   href="https://github.com/Nawang17/covid-19-info"
                   target="_blank"
+                  >Code</a
                 >
-                  Code
-                </a>
               </div>
             </div>
             <p class="description">
-              Displays the most recent number of cases associated with Covid-19.
+              Displays real-time Covid-19 case numbers and stats using public
+              APIs.
             </p>
-
             <p class="stack">React • CovidAPI</p>
           </div>
-          <!-- project 4 -->
 
           <div class="project">
             <div class="projectheader">
               <p class="title">SPLITTER</p>
               <div class="projectlinks">
-                <a href="https://splitmoney.netlify.app/" target="_blank">
-                  Live Demo
-                </a>
+                <a href="https://splitmoney.netlify.app/" target="_blank"
+                  >Live Demo</a
+                >
                 <a
                   href="https://github.com/Nawang17/splitter-react"
                   target="_blank"
+                  >Code</a
                 >
-                  Code
-                </a>
               </div>
             </div>
             <p class="description">
-              Very easy to use interface that allows you to split money between
-              friends
+              Simple app to split bills with friends easily and quickly.
             </p>
             <p class="stack">React</p>
           </div>
@@ -142,23 +135,17 @@
           href="https://github.com/Nawang17"
           target="_blank"
           class="fa fa-github"
-          style="font-size: 25px; text-decoration: none; color: black"
-        >
-        </a>
+        ></a>
         <a
           href="https://www.linkedin.com/in/nawangsherpa18/"
           target="_blank"
           class="fa fa-linkedin"
-          style="font-size: 25px; text-decoration: none; color: black"
-        >
-        </a>
+        ></a>
         <a
           href="mailto:nawangsherpa1010@gmail.com"
           target="_blank"
           class="fa fa-envelope"
-          style="font-size: 25px; text-decoration: none; color: black"
-        >
-        </a>
+        ></a>
       </div>
     </footer>
   </body>
