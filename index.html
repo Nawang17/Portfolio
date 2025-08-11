@@ -2,177 +2,421 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <meta property="og:description" content="Nawang portfolio website" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Nawang Sherpa • Portfolio</title>
+
+    <!-- SEO / Social -->
+    <meta
+      name="description"
+      content="Portfolio of Nawang Sherpa – Full stack web developer."
+    />
+    <meta property="og:title" content="Nawang Sherpa – Portfolio" />
+    <meta
+      property="og:description"
+      content="Projects in React, Node.js, Firebase, and more."
+    />
     <meta
       property="og:image"
       content="https://og.nest.land/api/image?fileType=png&layoutName=Page&Theme=Light&Title=Nawang+Sherpa&Subtitle=Portfolio+Website"
     />
+    <meta property="og:type" content="website" />
 
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Fonts / Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <title>Nawang Portfolio</title>
-  </head>
-  <body>
-    <main>
-      <p class="intro1">Hi, I’m Nawang 👋</p>
-      <p class="intro2">
-        I am a college student interested in
-        <span style="color: var(--accent); font-weight: bold">
-          Full stack web development</span
-        >. Feel free to reach out if you have any cool projects in mind.
-      </p>
-      <p class="skills">
-        <span>Technologies</span>: HTML • CSS • JavaScript • React • Node.js •
-        Express.js • REST APIs • MySQL
-      </p>
 
-      <section class="project-section">
-        <h3>Projects</h3>
-        <div class="projects">
-          <div class="project">
-            <div class="projectheader">
-              <p class="title">SyllabusDB</p>
-              <div class="projectlinks">
-                <a href="https://syllabusdb.com" target="_blank">Live Demo</a>
-                <a href="https://github.com/Nawang17/SyllabusDB" target="_blank"
+    <style>
+      :root {
+        --bg: #ffffff;
+        --surface: #ffffff;
+        --primary: #4f46e5;
+        --accent: #10b981;
+        --text: #111827;
+        --muted: #6b7280;
+        --border: #e5e7eb;
+        --maxw: 1000px;
+        --radius: 14px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial,
+          sans-serif;
+        color: var(--text);
+        background: var(--bg);
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      a:focus-visible,
+      button:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.18);
+        border-radius: 10px;
+      }
+
+      .wrap {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 44px 20px 80px;
+      }
+
+      /* Hero (no header) */
+      .intro {
+        padding: 16px 0 8px;
+      }
+      .hello {
+        font-size: clamp(30px, 5vw, 44px);
+        font-weight: 800;
+        color: var(--primary);
+        letter-spacing: -0.4px;
+      }
+      .tagline {
+        margin-top: 12px;
+        font-size: clamp(16px, 2.2vw, 18px);
+        color: var(--muted);
+        max-width: 60ch;
+      }
+      .skills {
+        margin-top: 18px;
+        font-size: 15px;
+      }
+      .skills strong {
+        color: var(--accent);
+      }
+
+      /* Projects */
+      .section-title {
+        margin: 36px 0 12px;
+        font-size: 20px;
+        font-weight: 800;
+        color: var(--primary);
+      }
+      .grid {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      }
+
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 18px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
+      }
+      .card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.07);
+      }
+
+      .card-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 10px;
+        margin-bottom: 12px;
+        border-bottom: 1px solid var(--border);
+      }
+      .title {
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: -0.2px;
+      }
+
+      .links {
+        display: inline-flex;
+        gap: 10px;
+      }
+      .btn-link {
+        font-size: 13px;
+        font-weight: 700;
+        padding: 8px 12px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        color: var(--primary);
+        background: #fff;
+        transition: background 0.15s ease, border-color 0.15s ease,
+          transform 0.15s ease;
+      }
+      .btn-link:hover {
+        background: #f8fafc;
+        border-color: #d1d5db;
+        transform: translateY(-1px);
+      }
+
+      .desc {
+        color: var(--muted);
+        font-size: 14.5px;
+      }
+      .stack {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .tag {
+        font-size: 12px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: #f3f4f6;
+        color: #374151;
+        border: 1px solid var(--border);
+      }
+
+      /* Footer */
+      footer {
+        margin-top: 60px;
+        border-top: 1px solid var(--border);
+        background: #fafafa;
+      }
+      .ftr {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 28px 20px 50px;
+        text-align: center;
+      }
+      .ft-title {
+        font-size: 18px;
+        font-weight: 800;
+        margin-bottom: 12px;
+        color: var(--text);
+      }
+      .social {
+        display: inline-flex;
+        gap: 16px;
+      }
+      .fa {
+        font-size: 24px;
+        color: #6b7280;
+        transition: transform 0.15s ease, color 0.15s ease;
+      }
+      .fa:hover {
+        color: var(--primary);
+        transform: translateY(-2px);
+      }
+
+      /* Reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation-duration: 0.001ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.001ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="wrap">
+      <section class="intro" aria-labelledby="hello">
+        <h1 id="hello" class="hello">Hi, I’m Nawang 👋</h1>
+        <p class="tagline">
+          I’m a college student focused on
+          <strong>full stack web development</strong>. If you have a cool idea,
+          let’s build it.
+        </p>
+        <p class="skills">
+          <strong>Technologies</strong>: HTML • CSS • JavaScript • React •
+          Node.js • Express • REST APIs • MySQL • Firebase • Git
+        </p>
+      </section>
+
+      <section aria-labelledby="projects">
+        <h2 id="projects" class="section-title">Projects</h2>
+
+        <div class="grid">
+          <!-- SyllabusDB -->
+          <article class="card">
+            <div class="card-head">
+              <h3 class="title">SyllabusDB</h3>
+              <div class="links">
+                <a
+                  class="btn-link"
+                  href="https://syllabusdb.com"
+                  target="_blank"
+                  rel="noopener"
+                  >Live</a
+                >
+                <a
+                  class="btn-link"
+                  href="https://github.com/Nawang17/SyllabusDB"
+                  target="_blank"
+                  rel="noopener"
                   >Code</a
                 >
               </div>
             </div>
-            <p class="description">
-              A web platform to browse and share real course syllabi to help
-              students choose classes. Features include Google authentication,
-              syllabus upload and viewing, subject and college filters, and an
-              admin review system to review syllabi uploads. Reached
-              <strong>1,200+</strong> new users in the first month.
+            <p class="desc">
+              Browse and share real course syllabi to help students pick
+              classes. Google sign in, uploads, college and subject filters, and
+              an admin review queue. Reached <strong>1,200+</strong> users in
+              the first month.
             </p>
+            <div class="stack">
+              <span class="tag">React</span><span class="tag">Firebase</span
+              ><span class="tag">Cloud Hosting</span
+              ><span class="tag">Auth</span>
+            </div>
+          </article>
 
-            <p class="stack">
-              React • Firebase • Cloud • Hosting • Google Authentication
-            </p>
-          </div>
-          <div class="project">
-            <div class="projectheader">
-              <p class="title">MOMOS</p>
-              <div class="projectlinks">
-                <a href="https://momosz.com/" target="_blank">Live Demo</a>
+          <!-- MOMOS -->
+          <article class="card">
+            <div class="card-head">
+              <h3 class="title">MOMOS</h3>
+              <div class="links">
                 <a
+                  class="btn-link"
+                  href="https://momosz.com/"
+                  target="_blank"
+                  rel="noopener"
+                  >Live</a
+                >
+                <a
+                  class="btn-link"
                   href="https://github.com/Nawang17/momos-client"
                   target="_blank"
+                  rel="noopener"
                   >Code</a
                 >
               </div>
             </div>
-            <p class="description">
-              A full stack social network where users can create accounts, build
-              profiles, share posts, like and comment, and communicate through
-              real-time one-on-one chat. Over <strong>260</strong> users
-              registered.
+            <p class="desc">
+              A social web app with profiles, posts, comments, likes, and real
+              time one on one chat. <strong>260+</strong> registered users.
             </p>
+            <div class="stack">
+              <span class="tag">React</span><span class="tag">Node</span
+              ><span class="tag">Express</span> <span class="tag">MySQL</span
+              ><span class="tag">Socket.io</span
+              ><span class="tag">Mantine</span>
+            </div>
+          </article>
 
-            <p class="stack">
-              React • Node.js • Express.js • MySQL • Socket.io • Mantine
-            </p>
-          </div>
-
-          <div class="project">
-            <div class="projectheader">
-              <p class="title">Himalayan Recipes</p>
-              <div class="projectlinks">
-                <a href="https://himalayaneats.netlify.app" target="_blank"
-                  >Live Demo</a
+          <!-- NYC 311 Snapshot -->
+          <article class="card">
+            <div class="card-head">
+              <h3 class="title">NYC 311 Snapshot</h3>
+              <div class="links">
+                <!-- Replace with your live URL/repo when ready -->
+                <a
+                  class="btn-link"
+                  href="https://nyc-311-snapshot.netlify.app/"
+                  target="_blank"
+                  rel="noopener"
+                  >Live</a
                 >
                 <a
+                  class="btn-link"
+                  href="https://github.com/Nawang17/NYC-311-SNAPSHOT"
+                  target="_blank"
+                  rel="noopener"
+                  >Code</a
+                >
+              </div>
+            </div>
+            <p class="desc">
+              A civic data dashboard that explores NYC 311 complaints across
+              boroughs and neighborhoods. Filter by date range, compare trends,
+              and surface insights that show what daily life feels like in each
+              area.
+            </p>
+            <div class="stack">
+              <span class="tag">React</span><span class="tag">Mantine</span
+              ><span class="tag">Recharts</span
+              ><span class="tag">NYC Open Data</span>
+            </div>
+          </article>
+
+          <!-- Himalayan Recipes -->
+          <article class="card">
+            <div class="card-head">
+              <h3 class="title">Himalayan Recipes</h3>
+              <div class="links">
+                <a
+                  class="btn-link"
+                  href="https://himalayaneats.netlify.app"
+                  target="_blank"
+                  rel="noopener"
+                  >Live</a
+                >
+                <a
+                  class="btn-link"
                   href="https://github.com/Nawang17/HimalayanRecipes"
                   target="_blank"
+                  rel="noopener"
                   >Code</a
                 >
               </div>
             </div>
-            <p class="description">
-              Built during a 2-day hackathon where our team placed
-              <strong>2nd</strong>, this web app lets users explore, share, and
-              contribute traditional Himalayan recipes and cultural stories.
+            <p class="desc">
+              Built in a 2 day hackathon. Explore and share traditional
+              Himalayan recipes and stories. Placed <strong>2nd</strong>.
             </p>
-
-            <p class="stack">React • Mantine • Firebase • Netlify</p>
-          </div>
-
-          <div class="project">
-            <div class="projectheader">
-              <p class="title">Covid-19 Info</p>
-              <div class="projectlinks">
-                <a href="https://covid-19-hack4pan.vercel.app/" target="_blank"
-                  >Live Demo</a
-                >
-                <a
-                  href="https://github.com/Nawang17/covid-19-info"
-                  target="_blank"
-                  >Code</a
-                >
-              </div>
+            <div class="stack">
+              <span class="tag">React</span><span class="tag">Mantine</span
+              ><span class="tag">Firebase</span><span class="tag">Netlify</span>
             </div>
-            <p class="description">
-              Displays real-time Covid-19 case numbers and stats using public
-              APIs.
-            </p>
-            <p class="stack">React • CovidAPI</p>
-          </div>
-
-          <div class="project">
-            <div class="projectheader">
-              <p class="title">SPLITTER</p>
-              <div class="projectlinks">
-                <a href="https://splitmoney.netlify.app/" target="_blank"
-                  >Live Demo</a
-                >
-                <a
-                  href="https://github.com/Nawang17/splitter-react"
-                  target="_blank"
-                  >Code</a
-                >
-              </div>
-            </div>
-            <p class="description">
-              Simple app to split bills with friends easily and quickly.
-            </p>
-            <p class="stack">React</p>
-          </div>
+          </article>
         </div>
       </section>
     </main>
+
     <footer>
-      <h3>🤝 Get in touch</h3>
-      <div>
-        <a
-          href="https://github.com/Nawang17"
-          target="_blank"
-          class="fa fa-github"
-        ></a>
-        <a
-          href="https://www.linkedin.com/in/nawangsherpa18/"
-          target="_blank"
-          class="fa fa-linkedin"
-        ></a>
-        <a
-          href="mailto:nawangsherpa1010@gmail.com"
-          target="_blank"
-          class="fa fa-envelope"
-        ></a>
+      <div class="ftr">
+        <div class="ft-title">Get in touch</div>
+        <div class="social" aria-label="Social links">
+          <a
+            href="https://github.com/Nawang17"
+            target="_blank"
+            class="fa fa-github"
+            aria-label="GitHub"
+            rel="noopener"
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/nawangsherpa18/"
+            target="_blank"
+            class="fa fa-linkedin"
+            aria-label="LinkedIn"
+            rel="noopener"
+          ></a>
+          <a
+            href="mailto:nawangsherpa1010@gmail.com"
+            target="_blank"
+            class="fa fa-envelope"
+            aria-label="Email"
+            rel="noopener"
+          ></a>
+        </div>
       </div>
     </footer>
   </body>
